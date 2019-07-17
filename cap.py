@@ -24,8 +24,8 @@ def create_random_string(char_string_size=10):
 def create_image_captcha(captcha_text):
 	image_captcha = ImageCaptcha()
 	image = image_captcha.generate_image(captcha_text)  # from captcha module calling function to create an image (blank image)
-	#image_captcha.create_noise_curve(image, image.getcolors()) # to create noise in the image
-	#image_captcha.create_noise_dots(image, image.getcolors())  # to create dot noise in the image
+	image_captcha.create_noise_curve(image, image.getcolors()) # to create noise in the image
+	image_captcha.create_noise_dots(image, image.getcolors())  # to create dot noise in the image
 	image_file = "./captcha_"+captcha_text + ".png"        #saving the image as a png file
 	image_captcha.write(captcha_text, image_file)			# writing the captcha text on to the generated image
 	plt.imshow(image) 										# matplotlib.pyplot moduleto display the image
